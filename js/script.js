@@ -5,8 +5,37 @@
 // TODO| numeri da indovinare sono stati individuati.
 
 // ! mi importo la funzione per generare i numeri casuali
-const gameNumbers = generateRandomNumbers(5, 1, 100);
-console.log("",gameNumbers);
+
+// ! creo la costante che indica il numero di numeri da generare
+const gameNumbers = 5;
+// ! creo la costante con i secondi da far passare
+const userSeconds = 30;
+// ! converto i secondi in millisecondi per importarli nella funzione
+const userMilliseconds = userSeconds * 1000;
+
+
+
+
+// !creo l'array con i numeri gameNumbers
+const gameNumbersArray = generateRandomNumbers(gameNumbers, 1, 100);
+console.log("numeri casuali",gameNumbersArray);
+
+// alert(`Memorizza questi numeri: ${gameNumbersArray}. Premi ok quando sei pronto`);
+
+// setTimeout(guessNumbers, userMilliseconds)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // !||||||||||||||||||||||||||||||||||||||||||||||||
