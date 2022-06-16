@@ -24,34 +24,35 @@ alert(`Memorizza questi numeri: ${gameNumbersArray}. Premi ok quando sei pronto`
 setTimeout(guessNumbers, userMilliseconds);
 
 
+
 // ! creo la funzione per chiedere 5 volte il numero
 function guessNumbers() {
-// !    creo un array per tutti i numeri scelti e uno solo per quelli indovinati
-const guessedNumbersArray = [];
+    // !    creo un array per tutti i numeri scelti e uno solo per quelli indovinati
+    const guessedNumbersArray = [];
     const userNumberArray = [];
-
-// !    creo un ciclo for con i che parte da 1 e finisce al numero impostato all'inizio
- for ( let i = 1; i <= gameNumbers; i++){
-
-    const userNumber = parseInt(prompt('Dimmi un numero'));
-// ! se il numero è nell'array dei numeri da ricordare verrà salvato 
-// ! in entrambi gli array, se no solo in quello dei numeri scelti
-    if(gameNumbersArray.includes(userNumber)) {
-        guessedNumbersArray.push(userNumber);
-        // userNumberArray.push(userNumber);
-
-    }else if (gameNumbersArray.length <= userNumberArray.length){
-        alert(`'Hai indovinato ${guessedNumbersArray.length} numeri! I numeri sono: ${guessedNumbersArray} `);
-    
-    console.log("numeri del giocatore",userNumberArray);
-    console.log("numeri indovinati", guessedNumbersArray);
-   } 
+    // !    creo un ciclo for con i che parte da 1 e finisce al numero impostato all'inizio
+    for ( let i = 1; i <= gameNumbers; i++){
+        const userNumber = parseInt(prompt('Dimmi un numero'));
+        // ! se il numero è nell'array dei numeri da ricordare verrà salvato 
+        // ! in entrambi gli array, se no solo in quello dei numeri scelti
+        if(gameNumbersArray.includes(userNumber)) {
+            guessedNumbersArray.push(userNumber);
+            // userNumberArray.push(userNumber);
+        }else if (gameNumbersArray.length <= userNumberArray.length){
+            alert(`'Hai indovinato ${guessedNumbersArray.length} numeri! I numeri sono: ${guessedNumbersArray} `);
+            console.log("numeri del giocatore",userNumberArray);
+            console.log("numeri indovinati", guessedNumbersArray);
+        } 
+    }
+    let userMessage;
+    if (guessedNumbersArray.length < 1){
+    alert('Non hai indovinato nessun numero 😫');
+    } else {
+        alert(`'Hai indovinato ${guessedNumbersArray.length} numeri! I numeri sono: ${guessedNumbersArray} `); 
+    }
 }
- }
  
 
-//  alert('ciaooo')
-//  alert(`'Hai indovinato ${guessedNumbersArray.length} numeri! I numeri sono: ${guessedNumbersArray} `);
 
 
 
