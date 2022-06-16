@@ -4,28 +4,72 @@
 // TODO| Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei
 // TODO| numeri da indovinare sono stati individuati.
 
-// ! mi importo la funzione per generare i numeri casuali
 
 // ! creo la costante che indica il numero di numeri da generare
 const gameNumbers = 5;
 // ! creo la costante con i secondi da far passare
-const userSeconds = 30;
+const userSeconds = 1;
 // ! converto i secondi in millisecondi per importarli nella funzione
 const userMilliseconds = userSeconds * 1000;
 
-
-
-
+// ! mi importo la funzione per generare i numeri casuali
 // !creo l'array con i numeri gameNumbers
 const gameNumbersArray = generateRandomNumbers(gameNumbers, 1, 100);
 console.log("numeri casuali",gameNumbersArray);
 
-// alert(`Memorizza questi numeri: ${gameNumbersArray}. Premi ok quando sei pronto`);
+// ! messaggio iniziale di alert
+alert(`Memorizza questi numeri: ${gameNumbersArray}. Premi ok quando sei pronto`);
 
-// setTimeout(guessNumbers, userMilliseconds)
+// ! faccio partire la function dopo i secondi prestabiliti
+setTimeout(guessNumbers, userMilliseconds);
 
 
 
+
+// function guessNumbers() {
+//     const userNumberArray = [];
+//     const guessedNumbersArray = [];
+
+//     while(userNumberArray.length = gameNumbers ){
+    
+//         const userNumber = parseInt(prompt('Dimmi un numero'));
+
+//         if(gameNumbersArray.includes(userNumber)) {
+//             guessedNumbersArray.push(userNumber);
+//             // userNumberArray.push(userNumber);
+
+//         }else if (!gameNumbersArray.includes(userNumber)){
+//             userNumberArray.push(userNumber);
+//         }
+//         console.log("numeri del giocatore",userNumberArray);
+//         console.log("numeri indovinati", guessedNumbersArray);
+//     }
+
+// }
+
+
+function guessNumbers() {
+    const userNumberArray = [];
+    const guessedNumbersArray = [];
+
+ for ( let i = 1; i <= gameNumbers; i++){
+
+    const userNumber = parseInt(prompt('Dimmi un numero'));
+
+    if(gameNumbersArray.includes(userNumber)) {
+        guessedNumbersArray.push(userNumber);
+        // userNumberArray.push(userNumber);
+
+    }else if (!gameNumbersArray.includes(userNumber)){
+        userNumberArray.push(userNumber);
+    }
+    console.log("numeri del giocatore",userNumberArray);
+    console.log("numeri indovinati", guessedNumbersArray);
+ }
+
+
+
+ }
 
 
 
